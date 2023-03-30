@@ -29,7 +29,7 @@ jobs:
           --static `
           --report-unsupported-elements-at-runtime `
           -H:Name=KeyFinder.exe `
-          -cp src\KeyFinder `
+          -cp src\KeyFinder\Main.java `
           KeyFinder.Main
 
       - name: Upload executable artifact
