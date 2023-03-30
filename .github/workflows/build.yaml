@@ -3,7 +3,7 @@ name: Build executable with GraalVM
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
