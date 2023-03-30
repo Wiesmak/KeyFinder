@@ -26,7 +26,7 @@ jobs:
         run: |
           javac`
           -d out\production\KeyFinder src\KeyFinder\Main.java`
-          - cp "src"
+          -cp "src"
 
       - name: Build executable
         run: |
