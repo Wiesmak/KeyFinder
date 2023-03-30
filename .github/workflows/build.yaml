@@ -1,0 +1,35 @@
+name: Build executable with GraalVM
+
+on:
+  push:
+    branches:
+      - main
+  tags:
+    - 1.*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup GraalVM
+        uses: graalvm/setup-graalvm@v1
+
+      - name: Build executable
+        run: |
+          native-image \
+            --no-fallback \
+            --static \
+            --report-unsupported-elements-at-runtime \
+            --target windows \
+            -H:Name=KeyFinder.exe \
+            -cp src/KeyFinder/Main.java \
+            KeyFinder.Main
+
+      - name: Upload executable artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: KeyFinder.exe
+          path: KeyFinder.exe
