@@ -24,7 +24,9 @@ jobs:
 
       - name : Compile Java code
         run: |
-          javac -d out\production\KeyFinder src\KeyFinder\Main.java
+          javac`
+          -d out\production\KeyFinder src\KeyFinder\Main.java`
+          - cp "src"
 
       - name: Build executable
         run: |
