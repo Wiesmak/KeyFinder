@@ -32,7 +32,7 @@ jobs:
           --no-fallback `
           --static `
           --report-unsupported-elements-at-runtime `
-          -H:Name=KeyFinder.exe `
+          -H:Name=KeyFinder `
           -cp out\production\KeyFinder `
           KeyFinder.Main
 
@@ -40,4 +40,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: KeyFinder.exe
-          path: KeyFinder.exe
+          path: KeyFinder\KeyFinder.exe
