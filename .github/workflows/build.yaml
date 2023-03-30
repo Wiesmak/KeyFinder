@@ -22,6 +22,10 @@ jobs:
           java-version: '19'
           components: 'native-image'
 
+      - name : Compile Java code
+        run: |
+          javac -d out\production\KeyFinder src\KeyFinder\Main.java
+
       - name: Build executable
         run: |
           native-image `
@@ -29,7 +33,7 @@ jobs:
           --static `
           --report-unsupported-elements-at-runtime `
           -H:Name=KeyFinder.exe `
-          -cp src\KeyFinder\Main.java `
+          -cp out\production\KeyFinder `
           KeyFinder.Main
 
       - name: Upload executable artifact
