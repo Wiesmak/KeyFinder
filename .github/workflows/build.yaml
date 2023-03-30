@@ -23,14 +23,14 @@ jobs:
           components: 'native-image'
 
       - name: Build executable
-        run: |
-          native-image \
-            --no-fallback \
-            --static \
-            --report-unsupported-elements-at-runtime \
-            -H:Name=KeyFinder.exe \
-            -cp src/KeyFinder/Main.java \
-            KeyFinder.Main
+        run: ^
+          native-image `
+          --no-fallback `
+          --static `
+          --report-unsupported-elements-at-runtime `
+          -H:Name=KeyFinder.exe `
+          -cp src\KeyFinder `
+          KeyFinder.Main
 
       - name: Upload executable artifact
         uses: actions/upload-artifact@v2
