@@ -23,7 +23,7 @@ jobs:
           components: 'native-image'
 
       - name: Build executable
-        run: `
+        run: |
           native-image `
           --no-fallback `
           --static `
