@@ -17,6 +17,7 @@ jobs:
         with:
           version: 'latest'
           java-version: '19'
+          components: 'native-image'
 
       - name: Build executable
         run: |
